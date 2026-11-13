@@ -65,7 +65,7 @@ plt.ylabel('$x$(m)')
 
 plt.plot(t,x_1,'r.', markersize=1, label='fietser 1')
 plt.plot(t,x_2,'b.', markersize=1, label='fietser 2')
-
+print('ik ben Chris')
 plt.show()
 
 
