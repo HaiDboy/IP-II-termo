@@ -45,7 +45,7 @@ t = np.arange(0,t_e+dt,dt) #s
 x_1 = np.zeros(N)          #m     maakt array van lengte N met alleen maar waarde 0.
 v_1 = 5                    #m/s
 
-# fietser 2
+# fietser 2 5656566
 x_2 = np.zeros(N)          #m     
 v_2 = np.zeros(N)          #m/s     
 a_2 = .5                   #m/s^2     
