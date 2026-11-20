@@ -36,7 +36,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # Beginwaarden
-dt = .25               #s
+dt = 0.05             #s
 t_e = 10                   #s
 N = int(t_e/dt)+1
 t = np.arange(0,t_e+dt,dt) #s
@@ -77,6 +77,8 @@ Wat op zou kunnen vallen is dat de snelheid in een cel constant gehouden wordt (
 
 ```{exercise}
 Maak het tijdsinterval $dt$ groter en vergelijk de afgelegde weg in de tien seconde. Wat gebeurt er met de afgelegde weg als we $dt$ groter maken? Is dat logisch vanuit gezien de natuurkunde? En gezien de methode van discretisatie? Leg uit.
+
+die wordt kleiner want want het nadert een limiet van 25, dat is niet logisch, want afgelegde weg zou niet moeten veranderen ten opzichte van dt. Volgens de methode van discretisatie klopt het wel doordat het verder van het afgaat limiet als dt naar omhoog gaat.
 ```
 
 
@@ -1189,21 +1191,21 @@ def update(frame):
         counter+=1
 
     # wall collision detection and response
-    if particleA.r[0]**2>100: # Check if particle is outside the bounds, np.abs could be used but is slower
+    if particleA.r[0]<-10: # Check if particle is outside the bounds, np.abs could be used but is slower
         particleA.v[0] = -particleA.v[0]
         ### YOUR CODE HERE ###
         counter+=1
-    if particleA.r[1]**2>100: 
-        particleA.v[1] = -particleA.v[1]
+    #if particleA.r[1]**2>100: 
+        #particleA.v[1] = -particleA.v[1]
         ### YOUR CODE HERE ###
         counter+=1
 
     dot.set_data([particleB.r[0]], [particleB.r[1]])
-    if particleB.r[0]**2>100: 
-        particleB.v[0] = -particleB.v[0]
+    #if particleB.r[0]**2>100: 
+      #  particleB.v[0] = -particleB.v[0]
 
-    if particleB.r[1]**2>100: 
-        particleB.v[1] = -particleB.v[1]
+    #if particleB.r[1]**2>100: 
+    #    particleB.v[1] = -particleB.v[1]
 
     return dot, counter_text
 
